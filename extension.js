@@ -30,6 +30,59 @@ function activate(context) {
 // This method is called when your extension is deactivated
 function deactivate() {}
 
+function runEslint(code) {
+    try {
+        // Run ESLint on the code and capture the output
+        const eslintOutput = execSync(`npx eslint --no-eslintrc -`, {
+            input: code,
+            encoding: 'utf-8',
+        });
+        return eslintOutput;
+    } catch (error) {
+        return error.stdout;
+    }
+}
+
+
+async function documentCodeWithGpt3(code) {
+    try {
+        // Define a query for GPT-3 to generate documentation
+        const query = `Document the following JavaScript code:\n\n${code}`;
+
+        // Use GPT-3 to generate documentation
+        const response = await openai.Completion.create({
+            engine: 'davinci',
+            prompt: query,
+            max_tokens: 100,
+        });
+
+        return response.choices[0].text;
+    } catch (error) {
+        return error.message;
+    }
+}
+
+const eslintOutput = runEslint(javascriptCode);
+
+// Step 2: Generate documentation using GPT-3
+documentCodeWithGpt3(javascriptCode)
+    .then((documentation) => {
+        console.log('ESLint Output:');
+        console.log(eslintOutput);
+
+        console.log('\nGenerated Documentation:');
+        console.log(documentation);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+
+const javascriptCode = `
+	function addNumbers(a, b) {
+		return a + b;
+	}
+	`;
+
 module.exports = {
 	activate,
 	deactivate
