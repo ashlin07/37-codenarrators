@@ -8,9 +8,10 @@ input_argument = sys.argv[1]
 
 import ast
 import openai
+import os
 
 # Your OpenAI GPT-3 API key
-api_key = "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"
+api_key = os.environ[API_KEY]
 
 # Define a Python code snippet that you want to document
 code_snippet = input_argument

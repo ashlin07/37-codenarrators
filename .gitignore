@@ -7,3 +7,5 @@
 .vscode/launch.json
 examples/azure/training.jsonl
 examples/azure/validation.jsonl
+.env
+
