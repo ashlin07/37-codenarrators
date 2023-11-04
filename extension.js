@@ -90,7 +90,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-// const { spawn } = require('child_process');
+const { spawn } = require('child_process');
 
 
 // this method is called when your extension is activated
@@ -113,11 +113,29 @@ function activate(context) {
         if(editor){
             const selection = editor.selection;
             const selectedText = editor.document.getText(selection);
-            const { spawn } = require('child_process');
-            const pythonProcess = spawn('python', ['python_file.py', selectedText]);
+            // vscode.window.showInformationMessage(selectedText)
+            // const { spawn } = require('child_process');
+           
+            const pythonProcess = spawn('python', ['C:\\ashlin\\college study material\\sem5\\37-codenarrators\\python_file.py', selectedText]);
+
+
+// Listen for the Python script's output
             pythonProcess.stdout.on('data', (data) => {
-                vscode.window.showInformationMessage('Python Output: ' + data.toString());
-              });
+            console.log('Python Output: ' + data.toString());
+            });
+
+            // Listen for errors
+            pythonProcess.stderr.on('data', (data) => {
+            console.error('Python Error: ' + data.toString());
+            });
+
+            // Listen for the Python script to exit
+            pythonProcess.on('close', (code) => {
+            console.log('Python process exited with code ' + code);
+            });
+            // pythonProcess.stdout.on('data', (data) => {
+            //     vscode.window.showInformationMessage('Python Output: ' + data.toString());
+            //   });
             
         }
 		// Display a message box to the user
