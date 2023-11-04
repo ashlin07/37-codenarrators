@@ -64,7 +64,8 @@ def extract_functions_from_code(code):
 extracted_functions = extract_functions_from_code(code_snippet)
 
 prompt_full = f"""Document the code that has the following functions doing the following tasks: {generated_documentation} 
-Produce a documentation explaining the use of the function given below and its implementation in high verbosity: {extracted_functions[0]} """
+Produce a documentation explaining the use of the function given below and its implementation in high verbosity: {extracted_functions[0]}
+Make it understandable for a junior developer """
 
 response_func = openai.Completion.create(
     engine="text-davinci-002",  # Choose the appropriate GPT-3 model
