@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 const vscode = require('vscode');
 const { spawn } = require('child_process');
 const fs=require('fs');
@@ -15,9 +18,7 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "CodeNarrator" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
+	
 	let disposable = vscode.commands.registerCommand('codenarrator.codenarrator', () => {
 		// The code you place here will be executed every time your command is executed
         const editor = vscode.window.activeTextEditor;
@@ -27,7 +28,11 @@ function activate(context) {
             // vscode.window.showInformationMessage(selectedText)
             // const { spawn } = require('child_process');
            
+<<<<<<< Updated upstream
             const pythonProcess = spawn('python', ['D:\\Kodikon\\37_codenarrators\\py_file.py', selectedText]);
+=======
+            const pythonProcess = spawn('python', ['C:\\Users\\arnab\\OneDrive\\Documents\\GitHub\\37_codenarrators\\python_file.py', selectedText]);
+>>>>>>> Stashed changes
 
 
 // Listen for the Python script's output
