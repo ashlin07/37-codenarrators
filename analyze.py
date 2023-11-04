@@ -3,7 +3,7 @@ import openai
 
 # Set your OpenAI GPT-3 API key
 api_key = "Code_Narrator"
-openai.api_key = "btB4sNkmII7MnFBLtjk9T3BlbkFJb7nkp5Llh7bZ0BoILoLM"
+openai.api_key = "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"
 
 # Define the Python code you want to analyze
 python_code = """
