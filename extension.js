@@ -116,7 +116,7 @@ function activate(context) {
             // vscode.window.showInformationMessage(selectedText)
             // const { spawn } = require('child_process');
            
-            const pythonProcess = spawn('python', ['C:\\ashlin\\college study material\\sem5\\37-codenarrators\\python_file.py', selectedText]);
+            const pythonProcess = spawn('python', ['D:\\Kodikon\\37_codenarrators\\python_file.py', selectedText]);
 
 
 // Listen for the Python script's output
