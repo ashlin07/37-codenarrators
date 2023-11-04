@@ -25,9 +25,9 @@ def generate_code_documentation(code):
 # Example code snippet
 code_snippet = """
 def add_numbers(a, b):
-    """
-    This function adds two numbers together and returns the result.
-    """
+    
+    # This function adds two numbers together and returns the result.
+    
     return a + b
 """
 
