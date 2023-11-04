@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "codenarrator.helloWorld",
-      "title": "Hello World"
+      "command": "codenarrator.codenarrator",
+      "title": "CodeNarrator"
     }]
   },
   "scripts": {
