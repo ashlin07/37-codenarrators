@@ -1,20 +1,17 @@
 # codenarrator README
 
-This is the README for your extension "codenarrator". After writing up a brief description, we recommend including the following sections.
+CodeNarrator is a sophisticated Visual Studio Code extension that harnesses the power of artificial intelligence (AI) to streamline code documentation. With CodeNarrator, documenting your code has never been easier. It employs AI to analyze your code and generate comprehensive documentation for functions, classes, methods, variables, and more.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Automatic Documentation Generation
+Seamlessly generates code documentation for your codebase.
+Supports multiple programming languages, including Python, JavaScript, Java, C++, and more.
+Automatically detects and documents functions, classes, methods, variables, and parameters.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+
 
 ## Extension Settings
 
