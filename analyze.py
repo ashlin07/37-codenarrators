@@ -37,6 +37,23 @@ def document_code_with_gpt3(code):
         return str(e)
 
 # Step 1: Analyze the code with Pylint
+python_code='''def generate_fibonacci(n):
+    fibonacci_series = []
+    a, b = 0, 1
+    while len(fibonacci_series) < n:
+        fibonacci_series.append(a)
+        a, b = b, a + b
+    return fibonacci_series
+
+# Change the value of 'n' to the number of Fibonacci terms you want
+n = 10  # You can replace this with your desired number of terms
+fib_series = generate_fibonacci(n)
+
+# Print the Fibonacci series
+print("Fibonacci Series:")
+for number in fib_series:
+    print(number)'''
+
 pylint_output = run_pylint(python_code)
 
 # Step 2: Generate documentation using GPT-3
