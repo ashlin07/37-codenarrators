@@ -2,7 +2,7 @@ import ast
 import openai
 
 # Your OpenAI GPT-3 API key
-api_key = "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"
+api_key = "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"
 
 # Define a Python code snippet that you want to document
 code_snippet = """
