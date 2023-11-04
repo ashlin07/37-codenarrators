@@ -27,12 +27,12 @@ function activate(context) {
             // vscode.window.showInformationMessage(selectedText)
             // const { spawn } = require('child_process');
            
-            const pythonProcess = spawn('python', ['C:\\ashlin\\college study material\\sem5\\37-codenarrators\\python_file.py', selectedText]);
+            const pythonProcess = spawn('python', ['D:\\Kodikon\\37_codenarrators\\py_file.py', selectedText]);
 
 
 // Listen for the Python script's output
             pythonProcess.stdout.on('data', (data) => {
-                const outputFile = fs.createWriteStream('C:\\ashlin\\college study material\\sem5\\37-codenarrators\\output.txt', { flags: 'a' });
+                const outputFile = fs.createWriteStream('D:\\Kodikon\\37_codenarrators\\output.txt', { flags: 'a' });
                 const outputData=data.toString()
                 outputFile.write(outputData + '\n');
             });

@@ -1,2 +1,12 @@
+import os
+print("hello")
+for i in range(5):
+    print("sup")
 
+import os
+print("hello")
+for i in range(5):
+    print("sup")
+
+    kk
 
