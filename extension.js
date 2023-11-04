@@ -62,6 +62,13 @@ async function documentCodeWithGpt3(code) {
     }
 }
 
+
+const javascriptCode = `
+	function addNumbers(a, b) {
+		return a + b;
+	}
+	`;
+
 const eslintOutput = runEslint(javascriptCode);
 
 // Step 2: Generate documentation using GPT-3
@@ -76,12 +83,6 @@ documentCodeWithGpt3(javascriptCode)
     .catch((error) => {
         console.error(error);
     });
-
-const javascriptCode = `
-	function addNumbers(a, b) {
-		return a + b;
-	}
-	`;
 
 module.exports = {
 	activate,
