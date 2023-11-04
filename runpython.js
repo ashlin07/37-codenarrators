@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 
 // Command to run the Python script and pass input as a command-line argument
-const pythonProcess = spawn('python', ['python_file.py', '10']);
+const pythonProcess = spawn('python', ['python_file.py', ' def calculate_square(x):     return x ** 2']);
 
 // Listen for the Python script's output
 pythonProcess.stdout.on('data', (data) => {
