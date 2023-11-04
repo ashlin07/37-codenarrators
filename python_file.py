@@ -63,13 +63,13 @@ def extract_functions_from_code(code):
 
 extracted_functions = extract_functions_from_code(code_snippet)
 
-prompt_full = f"""Document the code that has the following functions doing the following tasks: {generated_documentation} 
+prompt_full = f"""Your task is to document code for a company. Give a function and method documentation for the following functions: {generated_documentation} 
 Produce a documentation explaining the use of the function given below and its implementation in high verbosity: {extracted_functions[0]}
 Make it understandable for a junior developer """
 
 response_func = openai.Completion.create(
     engine="text-davinci-002",  # Choose the appropriate GPT-3 model
-    prompt=prompt,
+    prompt=prompt_full,
     max_tokens=100,  # Adjust the length as needed
 )
 func_documentation = response_func.choices[0].text
@@ -91,3 +91,40 @@ print(f"Function {extracted_functions[0]}",func_documentation)
 
 # Example Usage:
 # """
+
+user_content = """
+- Overview of the product
+- Installation and setup instructions
+- How to use the product
+- Frequently asked questions (FAQs)
+- Troubleshooting tips
+"""
+user_section_prompt = "### User Section\n\nPlease find below the information for end-users:\n"
+
+prompt_user = f"""Your task is to document code for a company. Give a function and method documentation for the following functions: {generated_documentation} 
+Produce a documentation explaining the use of the function given below and its implementation in high verbosity: {extracted_functions[0]}
+Make it understandable to a user in the format: {user_content} """
+
+response_user = openai.Completion.create(
+    engine="text-davinci-002",  # Choose the appropriate GPT-3 model
+    prompt=prompt_user,
+    max_tokens=1500,  # Adjust the length as needed
+)
+
+
+developer_content = """
+- Technical architecture
+- APIs and SDKs
+- Integration guides
+- Code samples
+- Contributing guidelines
+"""
+prompt_dev = f"""Your task is to document software for a company. Give a function and method documentation for the following functions: {generated_documentation} 
+Produce a documentation explaining the use of the function given below and its implementation in high verbosity: {extracted_functions[0]}
+Make it understandable to a developer who wants to work on the software in the format: {developer_content} """
+
+response_dev = openai.Completion.create(
+    engine="text-davinci-002",  # Choose the appropriate GPT-3 model
+    prompt=prompt_dev,
+    max_tokens=1500,  # Adjust the length as needed
+)
