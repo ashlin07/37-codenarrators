@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 const vscode = require('vscode');
 const { spawn } = require('child_process');
 const fs=require('fs');
@@ -28,11 +24,7 @@ function activate(context) {
             // vscode.window.showInformationMessage(selectedText)
             // const { spawn } = require('child_process');
            
-<<<<<<< Updated upstream
             const pythonProcess = spawn('python', ['D:\\Kodikon\\37_codenarrators\\py_file.py', selectedText]);
-=======
-            const pythonProcess = spawn('python', ['C:\\Users\\arnab\\OneDrive\\Documents\\GitHub\\37_codenarrators\\python_file.py', selectedText]);
->>>>>>> Stashed changes
 
 
 // Listen for the Python script's output
