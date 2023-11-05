@@ -1,9 +1,8 @@
-print("arnab")
-print("ashlin")
-print("bharat raja")
-# import sys
-# import ast
-# import openai
+
+import sys
+print(sys.argv[1])
+import ast
+import openai
 
 # # Read input from command-line argument
 # input_argument = sys.argv[1]

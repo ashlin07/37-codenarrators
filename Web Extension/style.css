@@ -17,3 +17,9 @@ p {
     border: 1px solid lightblue;
     padding: 10px;
 }
+
+button{
+    height: 40px;
+    width: 100px;
+    padding: auto;
+}
