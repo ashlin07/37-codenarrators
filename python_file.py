@@ -12,7 +12,7 @@ import openai
 import os
 
 # Your OpenAI GPT-3 API key
-api_key = os.environ[API_KEY]
+api_key = os.environ.get('API_KEY')
 
 # Define a Python code snippet that you want to document
 code_snippet = """
@@ -122,12 +122,12 @@ print(f"Function {extracted_functions[0]}",func_documentation)
 
 
 
-prompt2 = f"""Document the {method_name} method of the {class_name} class.
-Method Description:
-Parameters:
-Return Value:
-Example Usage:
-"""
+# prompt2 = f"""Document the {method_name} method of the {class_name} class.
+# Method Description:
+# Parameters:
+# Return Value:
+# Example Usage:
+# """
 
 user_content = """
 - Overview of the product
