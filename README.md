@@ -1,4 +1,4 @@
-# codenarrator README
+# codenarrator 
 
 CodeNarrator is a sophisticated Visual Studio Code extension that harnesses the power of artificial intelligence (AI) to streamline code documentation. With CodeNarrator, documenting your code has never been easier. It employs AI to analyze your code and generate comprehensive documentation for functions, classes, methods, variables, and more.
 
